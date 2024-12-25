@@ -126,13 +126,16 @@ def start_game():
                 guess_type = None
             pokedex.check_pokemon(guess_name, guess_type)
         
-        if choice == "S":
+        elif choice == "S":
             pokedex.print_overview()
         
 
-        if choice == "Q":
+        elif choice == "Q":
             pokedex.write_progress()
             playing = False
+        
+        else:
+            print(f"This is not a valid choice {choice}")
     
 
 start_game()

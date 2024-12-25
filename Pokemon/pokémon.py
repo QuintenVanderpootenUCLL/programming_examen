@@ -29,20 +29,21 @@ class Pokedex():
         pokemon = self.pokemons.get(name.lower(), "error")
         if pokemon == "error":
             print(f"{name} is not the name of a pokemon")
+            return None
         
         if pokemon.name_found:
             message1 = f"You have allready found {pokemon.name}"
         elif pokemon.name == name:
             pokemon.name_found = True
-            message1 = f"Congratulations. You found Ratata"
+            message1 = f"Congratulations. You found {pokemon.name}"
         
         if type == None:
-            message2 = ""
-        if pokemon.type_found:
+            message2 = f"You didn't guess a type this time"
+        elif pokemon.type_found:
             message2 = f"You have allready found the typing of {pokemon.name}"
-        if type == pokemon.type:
+        elif type == pokemon.type:
             pokemon.type_found = True
-            message2 = f"Congratsulaton you found the type for pokemon {pokemon.name}"
+            message2 = f"Congratulations you found the type for the pokemon {pokemon.name}"
         else:
             message2 = f"{type} is not the correct type for the pokemon {pokemon.name}"
         
@@ -69,44 +70,68 @@ class Pokedex():
 
 
     def read_pokemon_data(self, file):
-       pokemonlist = []
-       with open(file, "r", encoding= "utf-8") as pokemon_data:
+        pokemonlist = []
+        with open(file, "r", encoding= "utf-8") as pokemon_data:
             for line in pokemon_data:
                 pokemon = line.strip("\n").split(",")
                 pokemonlist.append(tuple(pokemon))
-            print(pokemonlist)
+        for pokémon in pokemonlist:
+            number , name , type  = pokémon
+            self.add_pokemon(number, name, type)
+  
+    def write_progress(self):
+        pokemons = self.pokemons.values()
+        first = True
+        with open("progress.txt", "w", encoding="utf-8") as progress_file:
+            for pokemon in pokemons:
+                string  = ""
+                if pokemon.name_found:
+                    if not first:
+                        string += "\n"
+                    string += pokemon.name
+                    if pokemon.type_found:
+                        string += f",{pokemon.type}"
+                    if first:
+                        first = False
+                    progress_file.write(string)
 
-           
+
+    def read_progress_data(self):
+        with open("progress.txt", "r", encoding= "utf-8") as progress_file:
+            lines = progress_file.readlines()
+        for pokemon in lines:
+            data = pokemon.strip("\n").split(",")
+            if len(data) == 1:
+                self.add_progress(data[0], None)
+            else:
+                self.add_progress(data[0], data[1])
+
+
         
 
 
 
-
-
-
-
+def start_game():
+    pokedex = Pokedex()
+    playing = True
+    pokedex.read_pokemon_data("pokemons.txt")
+    pokedex.read_progress_data()
+    while playing:
+        choice = input("What do you want to do? (G)uess Pokemon - (S)how Status - (Q)uit? ").strip().upper()
+        if choice == "G":
+            guess_name = input("Guess a pokemon's name")
+            guess_type = input("Guess the type of the pokemon u just named or type nothing if u don't know")
+            if guess_type == "":
+                guess_type = None
+            pokedex.check_pokemon(guess_name, guess_type)
+        
+        if choice == "S":
+            pokedex.print_overview()
         
 
+        if choice == "Q":
+            pokedex.write_progress()
+            playing = False
+    
 
-
-
-pokedex = Pokedex()
-# pokedex.add_pokemon("#0001", "Bulbasaur", "Grass-Poison")
-# pokedex.add_progress("Bulbasaur", "Grass-Poison")
-# pokedex.add_pokemon("#0003", "Ratata", "Normal")
-# bulbasaur = pokedex.get_pokemon("Bulbasaur")
-# print(bulbasaur.name_found)
-
-# pokedex.add_pokemon("#0002", "Pidgey", "Normal-Flying")
-# pokedex.add_progress("Pidgey", None)
-# pidgey = pokedex.get_pokemon("Pidgey")
-# print(pidgey.name_found, pidgey.type_found)
-# pokedex.check_pokemon("Pidgey", "Normal-Flying")
-# print(pidgey.name_found, pidgey.type_found)
-# pokedex.check_pokemon("Ratata", None)
-# pokedex.check_pokemon("Ratata", "Grass")
-# #pokedex.check_pokemon("Ratata", "Normal")
-# pokedex.print_overview()
-pokedex.read_pokemon_data("pokemons.txt")
-
-
+start_game()

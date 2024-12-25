@@ -1,5 +1,4 @@
-Bulbasaur,Grass-Poison
-Pidgey,Normal-Flying
-Rattata,
-Raticate,
-Spearow,Normal-Flying
+Clefairy,Fairy
+Geodude,Rock-Ground
+Mewtwo
+Mew

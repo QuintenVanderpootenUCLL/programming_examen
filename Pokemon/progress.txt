@@ -1,5 +1,6 @@
 Charizard,Fire-Flying
 Squirtle,Water
+Pikachu,Electric
 Clefairy,Fairy
 Geodude,Rock-Ground
 Mewtwo,Psychic

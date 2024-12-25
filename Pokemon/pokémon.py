@@ -33,7 +33,8 @@ class Pokedex():
         
         if pokemon.name_found:
             message1 = f"You have allready found {pokemon.name}"
-        elif pokemon.name == name:
+
+        elif pokemon.name.lower() == name.lower():
             pokemon.name_found = True
             message1 = f"Congratulations. You found {pokemon.name}"
         
@@ -41,7 +42,7 @@ class Pokedex():
             message2 = f"You didn't guess a type this time"
         elif pokemon.type_found:
             message2 = f"You have allready found the typing of {pokemon.name}"
-        elif type == pokemon.type:
+        elif type.lower() == pokemon.type.lower():
             pokemon.type_found = True
             message2 = f"Congratulations you found the type for the pokemon {pokemon.name}"
         else:
@@ -119,8 +120,8 @@ def start_game():
     while playing:
         choice = input("What do you want to do? (G)uess Pokemon - (S)how Status - (Q)uit? ").strip().upper()
         if choice == "G":
-            guess_name = input("Guess a pokemon's name")
-            guess_type = input("Guess the type of the pokemon u just named or type nothing if u don't know")
+            guess_name = input("Guess a pokemon's name ")
+            guess_type = input("Guess the type of the pokemon u just named or type nothing if u don't know ")
             if guess_type == "":
                 guess_type = None
             pokedex.check_pokemon(guess_name, guess_type)

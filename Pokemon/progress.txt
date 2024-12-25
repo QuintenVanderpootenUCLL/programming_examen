@@ -1,4 +1,6 @@
+Charizard,Fire-Flying
+Squirtle
 Clefairy,Fairy
 Geodude,Rock-Ground
-Mewtwo
+Mewtwo,Psychic
 Mew

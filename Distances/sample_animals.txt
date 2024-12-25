@@ -1,0 +1,4 @@
+Leo,Lion
+Stripes,Tiger
+Zigzag,Zebra
+Bananas,Monkey

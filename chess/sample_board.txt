@@ -1,0 +1,9 @@
+8:  Rb | Nb | Bb | Qb | Kb | Bb | Nb | Rb 
+7:  pb | pb |    | pb | pb | pb | pb | pb 
+6:     |    |    |    |    |    |    |    
+5:     |    | pb |    |    |    |    |    
+4:     |    |    |    | pw |    |    |    
+3:     |    | pw |    |    |    |    |    
+2:  pw | pw |    | pw |    | pw | pw | pw 
+1:  Rw | Nw | Bw | Qw | Kw | Bw | Nw | Rw 
+    a    b    c    d    e    f    g    h

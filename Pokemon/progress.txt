@@ -1,0 +1,5 @@
+Bulbasaur,Grass-Poison
+Pidgey,Normal-Flying
+Rattata,
+Raticate,
+Spearow,Normal-Flying

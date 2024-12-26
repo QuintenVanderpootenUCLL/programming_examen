@@ -3,5 +3,6 @@ Squirtle,Water
 Pikachu,Electric
 Clefairy,Fairy
 Geodude,Rock-Ground
+Onix
 Mewtwo,Psychic
 Mew

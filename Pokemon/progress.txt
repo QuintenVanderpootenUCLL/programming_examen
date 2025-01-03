@@ -2,7 +2,8 @@ Charizard,Fire-Flying
 Squirtle,Water
 Pikachu,Electric
 Clefairy,Fairy
+Vileplume,Grass-Poison
 Geodude,Rock-Ground
-Onix
+Onix,Rock-Ground
 Mewtwo,Psychic
 Mew

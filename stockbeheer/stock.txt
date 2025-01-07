@@ -1,15 +1,15 @@
-Corsair 32GB DDR-5|114.90|20
-Kingston Fury 64GB DDR-5|219.90|12
-G.Skill 32GB DDR-5|117.50|18
-AMD Ryzen 5 7600X|199.90|4
-Intel Core i5-2400|159.90|8
-Intel Core i7-14700|389.00|3
-Seagate IronWolf 4TB|107.90|10
-WD Red Plus 12TB|289.00|6
-BarraCuda 8TB|144.90|12
-GIGABYTE GeForce RTX 4070|579.00|2
-GIGABYTE Radeon RX 7800|499.00|2
-MSI GeForce RTX 4080|1159.00|1
-MSI B650 Gaming Plus|149.90|4
-ASUS Rog Strix|279.00|6
-Lenovo IdeaPad Slim 3|549.00|3
+Corsair 32GB DDR-5|114.9|10
+Kingston Fury 64GB DDR-5|219.9|12
+G.Skill 32GB DDR-5|117.5|18
+AMD Ryzen 5 7600X|199.9|4
+Intel Core i5-2400|159.9|8
+Intel Core i7-14700|389.0|3
+Seagate IronWolf 4TB|107.9|10
+WD Red Plus 12TB|289.0|6
+BarraCuda 8TB|144.9|12
+GIGABYTE GeForce RTX 4070|579.0|2
+GIGABYTE Radeon RX 7800|499.0|2
+MSI GeForce RTX 4080|1159.0|1
+MSI B650 Gaming Plus|149.9|4
+ASUS Rog Strix|279.0|6
+Lenovo IdeaPad Slim 3|549.0|3

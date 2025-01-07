@@ -78,7 +78,7 @@ class Shop():
     def register_sale(self, name, quantity_sold):
         part = self.stock.get_part(name)
         part.quantity -= quantity_sold
-        with open("sales.txt", "w", encoding="utf-8") as file:
+        with open("sales.txt", "a", encoding="utf-8") as file:
             file.write(f"Sold {quantity_sold} item(s) from {name} for price {part.price}")
         
 

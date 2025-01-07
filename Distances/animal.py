@@ -38,7 +38,7 @@ def calculate_travelled_distance(locatie_data):
 def most_active_animal(location_data):
     afstand_per_dier = {}
     afstanden = set()
-    for dier, locaties in locatie_data.items():
+    for dier, locaties in location_data.items():
         afstand = calculate_travelled_distance(locaties)
         afstand_per_dier[afstand] = dier
         afstanden.add(afstand)
@@ -49,7 +49,7 @@ def most_active_animal(location_data):
 def most_lazy_animal(location_data):
     afstand_per_dier = {}
     afstanden = set()
-    for dier, locaties in locatie_data.items():
+    for dier, locaties in location_data.items():
         afstand = calculate_travelled_distance(locaties)
         afstand_per_dier[afstand] = dier
         afstanden.add(afstand)
@@ -76,8 +76,6 @@ def flag_predator_prey_contact(location_data, animal_data):
                         tijdstip, x1, y1 = locaties1[i]
                         tijdstip, x2, y2 = locaties2[i]
                         afstand = bereken_afstand((x2,y2),(x1,y1))
-                        print(naam1, naam2)
-                        print(afstand)
                         if afstand <= 2:
                             with open("contacts.txt", "a", encoding="utf-8") as file:
                                 file.write(f"Time {tijdstip}, {naam1} ({animal_data[naam1]}), {naam2} ({animal_data[naam2]}), Distance {afstand}\n")
@@ -92,13 +90,16 @@ def flag_predator_prey_contact(location_data, animal_data):
 
 
 
-animal_data = (read_animal_data("animals.txt"))
-locatie_data = (read_location_data("locations.txt"))
-#print(animal_data)
-#print(locatie_data)
-#print(calculate_travelled_distance(locatie_data["Leo"]))
-most_active, active_distance = most_active_animal(locatie_data)
-#print(f"Most active animal: {most_active} with distance {active_distance:.2f}")
-most_lazy, lazy_distance = most_lazy_animal(locatie_data)
-#print(f"Most lazy animal: {most_lazy} with distance {lazy_distance:.2f}")
-flag_predator_prey_contact(locatie_data, animal_data)
+animal_data = read_animal_data("animals.txt")
+location_data = read_location_data("locations.txt")
+
+most_active, active_distance = most_active_animal(location_data)
+print(f"Most active animal: {most_active} with distance {active_distance:.2f}")
+"Most active animal: Gallop with distance 1548.18"
+
+most_lazy, lazy_distance = most_lazy_animal(location_data)
+print(f"Most lazy animal: {most_lazy}with distance {lazy_distance:.2f}")
+"Most lazy animal: Tower with distance 971.62"
+
+flag_predator_prey_contact(location_data, animal_data)
+print("Contacts between predators and prey are saved in 'contacts.txt'.")
